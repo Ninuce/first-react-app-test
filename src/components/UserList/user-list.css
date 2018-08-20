@@ -1,0 +1,8 @@
+.user-list {
+  width: 200px;
+  height: calc(100vh - 80px);
+  margin-top: 20px;
+  margin-left: 12px;
+  position: sticky;
+  top: 80px;
+}

@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 16px;
+  background-color: limegreen;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+
+}
+
+.btn:hover {
+  background-color: #efa424;
+  cursor: pointer;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+}

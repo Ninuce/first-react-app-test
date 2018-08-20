@@ -1,0 +1,50 @@
+.card {
+  /* max-width: 400px; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.card__header {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
+
+.card__title {
+  text-align: left;
+  font-size: 20px;
+  margin: 0;
+  padding-left: 14px;
+}
+.card__avatar {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+
+}
+.card__media {
+  width: 400px;
+}
+
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+}
+.card__icon {
+  height: 30px;
+}
+
+.card__icon:hover {
+  opacity: 0.3;
+}
+
+.card__icon:not(:last-child) {
+  padding-right: 10px;
+}

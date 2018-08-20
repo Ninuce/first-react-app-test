@@ -1,0 +1,16 @@
+.user-card {
+  display: flex;
+  align-items: center;
+}
+
+.user-card:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.user-card__avatar {
+    height: 34px;
+    width: 34px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 6px;
+}

@@ -8,7 +8,7 @@ class Posts extends Component {
     return (
       <div className="Posts">
         <PostCard text="some text" user="Lota" />
-        <PostCard text="some other text" user="Ninuce" />
+        <PostCard text="some longer text some longer text some longer text some longer text some longer text some longer text some longer text some longer text" user="Ninuce" />
       </div>
     );
   }

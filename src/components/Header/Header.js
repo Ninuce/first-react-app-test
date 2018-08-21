@@ -9,8 +9,8 @@ class Header extends Component {
       <div className="header">
         <span>Lotagram</span>
         <div className="header__actions">
-          <button className="btn" type="button" name="button">Click me</button>
-          <button className="btn" type="button" name="button">No, click me</button>
+          <button className="btn" type="button" name="button" onClick={this.props.showModal}>Create a post</button>
+          <button className="btn" type="button" name="button">Other button</button>
         </div>
       </div>
     );

@@ -5,17 +5,40 @@ import './modal.css';
 class Modal extends Component {
 
   state = {
-    imgUrl: null
-  }
+    imageUrl: null,
+    formData: null,
+    caption:"",
+  };
 
   handleAddImg = event => {
     const file = event.target.files[0];
     const fileReader = new FileReader()
+    const formData = new FormData();
+    formData.append("media", file);
+
     fileReader.onloadend = () => {
-      this.setState({imgUrl: fileReader.result})
+      this.setState({formData, imgUrl: fileReader.result})
     }
     fileReader.readAsDataURL(file)
   }
+
+  handleSubmit = e => {
+    console.log("enter handlesubmit");
+    e.preventDefault();
+    const { formData, caption } = this.state;
+    this.props.submitPost(formData, caption).then(() => {
+      this.props.getPosts();
+    })
+
+  };
+
+  componentDidUpdate() {
+    if(this.props.postsReducer.isSubmitted) {
+      this.props.hideModal()
+    }
+  }
+  onChange = event => this.setState({caption: event.target.value})
+
 
   render() {
     return (
@@ -23,7 +46,7 @@ class Modal extends Component {
         <div className="modal-content">
           <form>
             <label className="modal__form-input-container">Caption
-              <input type="text"></input>
+              <input type="text" onChange={this.onChange}></input>
             </label>
             <label className="modal__form-input-container">
               File:
@@ -32,7 +55,7 @@ class Modal extends Component {
           </form>
           {this.state.imgUrl ? (<img src={this.state.imgUrl} alt="" /> ): null}
           <div className="modal__actions">
-            <button className="btn" type="button" name="button">Yes</button>
+            <button className="btn" type="button" name="button" onClick={this.handleSubmit}>Submit</button>
             <button className="btn" type="button" name="button" onClick={this.props.hideModal}>Close</button>
           </div>
         </div>

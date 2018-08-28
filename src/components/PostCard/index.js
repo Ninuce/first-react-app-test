@@ -7,15 +7,18 @@ import bookmark from '../../images/bookmark.svg';
 import avatar from '../../images/avatar.JPG';
 import './card.css';
 
+export const sum= (a,b) => a + b
 
-const PostCard = ({user, text}) => {
+
+
+const PostCard = ({user, text, img}) => {
   return (
   <div className="card">
     <div className="card__header">
       <img src={avatar} className="card__avatar" alt="avatar" />
       <h2 className="card__title">{user}</h2>
     </div>
-    <img src={me} className="card__media" alt="logo" />
+    <img src={img} className="card__media" alt="logo" />
 
     <div className="card__actions">
       <div className="card__actions-interaction">

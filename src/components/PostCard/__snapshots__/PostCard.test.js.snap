@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing postcard renders snapshot 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card__header"
+  >
+    <img
+      alt="avatar"
+      className="card__avatar"
+      src="avatar.JPG"
+    />
+    <h2
+      className="card__title"
+    />
+  </div>
+  <img
+    alt="logo"
+    className="card__media"
+  />
+  <div
+    className="card__actions"
+  >
+    <div
+      className="card__actions-interaction"
+    >
+      <img
+        alt="heart"
+        className="card__icon"
+        src="heart.png"
+      />
+      <img
+        alt="comment"
+        className="card__icon"
+        src="comment.png"
+      />
+    </div>
+    <div
+      className="card__actions-personal"
+    >
+      <img
+        alt="bookmark"
+        className="card__icon"
+        src="bookmark.svg"
+      />
+    </div>
+  </div>
+  <p />
+</div>
+`;

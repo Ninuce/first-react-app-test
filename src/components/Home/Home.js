@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import Posts from "../Posts";
+import Posts from "../../containers/Posts/postsContainer";
 import UserList from "../UserList";
 import Header from "../Header/Header.js";
-import Modal from "../Modal/Modal.js";
+import Modal from "../../containers/Modal/modalContainer.js";
 import Overlay from "../Overlay/Overlay.js";
 import './home.css';
 
 class Home extends Component {
 
-  state = {
-    isModalOpen: false
+  constructor (props) {
+    super(props);
+    this.state = {
+        isModalOpen: false
+      }
+      props.validateToken();
+  }
+
+  componentDidUpdate() {
+    const { loginReducer } = this.props; //OR loginReducer = this.props.loginReducer - in props, find loginReducer key, store value in const loginReducer
+    if(!loginReducer.isLogged) {
+      this.props.history.push("/login")
+    }
   }
 
   showModal = () => {
@@ -36,7 +47,7 @@ class Home extends Component {
         </div>
         { this.state.isModalOpen ? <Overlay handleClickOutside={this.handleClickOutside}><Modal hideModal={this.hideModal}/></Overlay> : null }
       </div>
-    );
+    )
   }
 }
 
